@@ -1,4 +1,5 @@
 import ArrowRight from "../Components/Icons/ArrowRight.jsx";
+import PizzaImage from "../assets/Images/pizza2.png";
 
 function Home() {
     return (
@@ -27,6 +28,10 @@ function Home() {
                             <ArrowRight />
                         </span>
                     </button>
+
+                </div>
+                <div>
+                    <img src={PizzaImage} alt="Pizza" width={450} height={450} />
                 </div>
             </section>
         </div>
