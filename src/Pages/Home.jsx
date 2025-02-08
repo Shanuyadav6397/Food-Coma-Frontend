@@ -15,7 +15,7 @@ function Home() {
                 <div className="w-4/6 ml-4 text-center md:w-2/6 md:text-left">
 
                     <div className="flex justify-center text-4xl md:justify-normal">
-                        <h1 className="pb-5 font-bold text-transparent bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text">
+                        <h1 className="pb-5 font-bold text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
                             Enjoy the Slice {' '}
                         </h1>
                         <h1>
@@ -94,9 +94,9 @@ function Home() {
                             </div>
                             <div className="flex flex-wrap space-y-6 md:space-y-0">
                                 <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                    <img src={orderFood} alt="" />
-                                </div>
+                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
+                                        <img src={orderFood} alt="" />
+                                    </div>
                                     <div className="flex-grow">
                                         <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
                                             Order Food
@@ -107,9 +107,9 @@ function Home() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                    <img src={Pickup} alt="" />
-                                </div>
+                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
+                                        <img src={Pickup} alt="" />
+                                    </div>
                                     <div className="flex-grow">
                                         <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
                                             Pickup Food
@@ -120,9 +120,9 @@ function Home() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                    <img src={Enjoy} alt="" />
-                                </div>
+                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
+                                        <img src={Enjoy} alt="" />
+                                    </div>
                                     <div className="flex-grow">
                                         <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
                                             Enjoy Food
