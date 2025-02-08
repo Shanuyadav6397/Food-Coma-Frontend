@@ -145,7 +145,7 @@ function Login() {
                     </div>
 
                     <form action="" className="flex flex-col w-full p-8 mt-10 bg-gray-100 rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
-                        <h2 className="mb-5 font-medium text-2xl text-gray-900 title-font">Log In</h2>
+                        <h2 className="mb-5 font-medium text-2xl text-gray-900 title-font">Sign In</h2>
                         <div className="relative mb-4">
                             <label htmlFor="email" className="text-sm leading-7 text-gray-600">Email <span className="text-red-500">*</span></label>
                             <input

@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import SignupPresentation from "./SignupPresentation";
+import { useDispatch } from "react-redux";
+import { createAccount } from "../../Redux/Slices/AuthSlice";
+import { useNavigate } from "react-router-dom";
 
 
 // Container Component
 function Signup() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [signupState, setSignupState] = useState({
         firstName: "",
@@ -22,7 +27,7 @@ function Signup() {
         })
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault(); // Prevents the form from reloading the page
         console.log(signupState);
         // Add validation here
@@ -56,6 +61,15 @@ function Signup() {
             toast.error("Mobile number should be a number");
             return;
         }
+
+        const apiResponse = await dispatch(createAccount(signupState));
+        console.log("API Response", apiResponse);
+        if(apiResponse.payload.data.success){
+            navigate('/auth/login');
+        }else{
+            toast.error(apiResponse.data.message);
+        }
+        console.log("API Response", apiResponse);
         // toast.success("Form submitted successfully");
     }
 

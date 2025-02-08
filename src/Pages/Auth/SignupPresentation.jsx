@@ -161,6 +161,18 @@ function SignupPresentation({ handelUserInput, handleSubmit }) {
                                 placeholder="John"
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
                         </div>
+                        {/* <div className="relative mb-4">
+                            <label htmlFor="lastName" className="text-sm leading-7 text-gray-600">Last Name</label>
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                required
+                                onChange={handelUserInput}
+                                minLength={5}
+                                placeholder="John"
+                                className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
+                        </div> */}
                         <div className="relative mb-4">
                             <label htmlFor="email" className="text-sm leading-7 text-gray-600">Email <span className="text-red-500">*</span></label>
                             <input
@@ -195,6 +207,18 @@ function SignupPresentation({ handelUserInput, handleSubmit }) {
                                 placeholder="Enter your password"
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
                         </div>
+                        {/* <div>
+                            <label htmlFor="address" className="text-sm leading-7 text-gray-600">Address <span className="text-red-500">*</span></label>
+                            <textarea
+                                name="address"
+                                id="address"
+                                cols="30"
+                                rows="5"
+                                required
+                                onChange={handelUserInput}
+                                placeholder="Enter your address"
+                                className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200"></textarea>
+                        </div> */}
                         <button
                             onClick={handleSubmit}
                             type="submit"
