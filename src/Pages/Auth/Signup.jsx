@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Signup() {
     return (
         <>
             <section className="text-gray-600 body-font">
                 <div className="flex flex-wrap items-center h-screen px-10 py-6 mx-auto">
+                    {/* SVG Image */}
                     <div className="hidden pr-0 lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 md:block">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +160,7 @@ function Signup() {
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
                         </div>
                         <div className="relative mb-4">
-                            <label htmlFor="firstName" className="text-sm leading-7 text-gray-600">Email <span className="text-red-500">*</span></label>
+                            <label htmlFor="email" className="text-sm leading-7 text-gray-600">Email <span className="text-red-500">*</span></label>
                             <input
                                 type="email"
                                 id="email"
@@ -167,7 +170,7 @@ function Signup() {
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
                         </div>
                         <div className="relative mb-4">
-                            <label htmlFor="firstName" className="text-sm leading-7 text-gray-600">Mobile Number <span className="text-red-500">*</span></label>
+                            <label htmlFor="mobileNumber" className="text-sm leading-7 text-gray-600">Mobile Number <span className="text-red-500">*</span></label>
                             <input
                                 type="tel"
                                 id="mobileNumber"
@@ -178,7 +181,7 @@ function Signup() {
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200" />
                         </div>
                         <div className="relative mb-4">
-                            <label htmlFor="firstName" className="text-sm leading-7 text-gray-600">Password <span className="text-red-500">*</span></label>
+                            <label htmlFor="password" className="text-sm leading-7 text-gray-600">Password <span className="text-red-500">*</span></label>
                             <input
                                 type="password"
                                 id="password"
@@ -192,8 +195,8 @@ function Signup() {
                             className="w-full px-8 py-2 text-lg text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600">
                             Create Account
                         </button>
-                        <p className="mt-3 text-xs text-gray-500">Already have an account?
-                            <a href="/auth/login" className="text-yellow-500">Login</a>
+                        <p className="mt-3 text-xs text-gray-500">Already have an account? &nbsp;
+                            <Link to="/auth/login" className="text-yellow-500">Login</Link>
                         </p>
                     </form>
                 </div>
