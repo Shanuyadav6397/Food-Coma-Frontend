@@ -1,11 +1,11 @@
 import './App.css'
 import Home from './Pages/Home'
 import { Route, Routes } from 'react-router-dom'
-import Signup from './Pages/Auth/Signup'
-import Login from './Pages/Auth/Login'
-import NotFound from './Pages/NotFound'
-import Denied from './Pages/Denied'
-import AddProduct from './Pages/Admin/AddProduct'
+import Signup from './Pages/Auth/Signup.jsx'
+import NotFound from './Pages/NotFound.jsx'
+import Denied from './Pages/Denied.jsx'
+import AddProduct from './Pages/Admin/AddProduct.jsx'
+import Login from './Pages/Auth/Login.jsx'
 
 function App() {
 

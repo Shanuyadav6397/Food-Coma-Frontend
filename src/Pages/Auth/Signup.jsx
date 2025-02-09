@@ -64,13 +64,9 @@ function Signup() {
 
         const apiResponse = await dispatch(createAccount(signupState));
         console.log("API Response", apiResponse);
-        if(apiResponse.payload.data.success){
+        if (apiResponse.payload.success) {
             navigate('/auth/login');
-        }else{
-            toast.error(apiResponse.data.message);
         }
-        console.log("API Response", apiResponse);
-        // toast.success("Form submitted successfully");
     }
 
     return (
