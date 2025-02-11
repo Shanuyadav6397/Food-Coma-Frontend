@@ -9,6 +9,7 @@ import Layout from "../Layouts/Layout.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllProducts } from "../Redux/Slices/ProductSlice.js";
+import { Link } from "react-router-dom";
 
 function Home() {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ function Home() {
                             The Pizza App lets you order your favorite pizza from the comfort of your home. Enjoy the best pizza in town with just a few clicks.
                         </p>
 
-                        <button className="flex items-center px-4 py-2 text-white bg-yellow-500 rounded-md hover:bg-yellow-600">
+                        <button className="flex items-center px-4 py-2 text-white bg-yellow-500 rounded-md hover:bg-yellow-600 cursor-pointer">
                             Order Now
                             <span className="inline-block ml-2 align-middle transition-transform ease-in-out transform-gpu hover:translate-x-2">
                                 <ArrowRight />
@@ -150,8 +151,7 @@ function Home() {
                         </div>
                     </div>
                 </section>
-                {/* Products Section */}
-                <section className="py-4 mt-6 bg-gradient-to-r from-amber-50 to-orange-300">
+                {/* <section className="py-4 mt-6 bg-gradient-to-r from-amber-50 to-orange-300">
                     <div className="container">
                         <h2 className="text-3xl font-bold text-center text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
                             Our Products
@@ -160,26 +160,61 @@ function Home() {
                             {productsData.map((product) => (
                                 <div
                                     key={product._id}
-                                    className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md">
+                                    className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md cursor-pointer hover:shadow-lg">
                                     <img
-                                        src={product.productImage}
-                                        alt={product.name}
+                                        src={product?.productImage}
+                                        alt={product.productName}
                                         className="rounded-lg"
                                     />
                                     <h3 className="text-lg font-bold text-center text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
-                                        {product.productName}
+                                        {product?.productName}
                                     </h3>
                                     <p className="text-center text-[#6B7280]">
-                                        {product.description}
+                                        {product?.description}
                                     </p>
                                     <p className="text-center text-[#6B7280]">
-                                        Price: ${product.price}
+                                        Price: ${product?.price}
                                     </p>
                                 </div>
                             ))}
                         </div>
                     </div>
-                </section>
+                </section> */}
+                {/* Products Section */}
+                <div className="mx-auto">
+                    <div className="flex flex-wrap justify-center">
+                        {productsData.map((item, key) => {
+                            return (
+                                item.inStock && (
+                                    <div className="p-4 md:1/3" key={item._id} >
+                                        <Link to={`/product/${item._id}`}>
+                                            <div className="overflow-hidden rounded-lg border-opacity-60">
+                                                <img
+                                                    className="object-cover object-center w-full lg:h-48 md:h-36"
+                                                    src={item?.productImage}
+                                                    alt="Pizza Image" />
+                                                <div className="p-6">
+                                                    <h2 className="text-xs font-medium tracking-widest text-gray-400 title-font">
+                                                        {item?.category}
+                                                    </h2>
+                                                    <h1 className="text-xl font-bold text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
+                                                        {item?.productName}
+                                                    </h1>
+                                                    <p className="mb-4 text-base leading-relaxed">
+                                                        {item?.description}
+                                                    </p>
+                                                    <p className="text-lg font-medium text-gray-900 title-font">
+                                                        Price: ${item?.price}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         </Layout>
     );

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Pizzalogo from '../assets/Images/pizza1.png';
+import CartIcon from '../assets/Images/cart.svg';
 import Footer from '../Components/Footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../Redux/Slices/AuthSlice.js';
@@ -7,6 +8,8 @@ import { logout } from '../Redux/Slices/AuthSlice.js';
 function Layout({ children }) {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const { cartsData } = useSelector((state) => state.cart);
+    console.log("cartData1", cartsData);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -47,6 +50,15 @@ function Layout({ children }) {
                                 <Link to={"/auth/login"}>Login</Link>
                             )}
                         </li>
+                        {isLoggedIn && (
+                            <Link to={'/cart'}>
+                                <li>
+                                    <img src={CartIcon} alt="Cart" className='w-6 h-6 inline' />
+                                    {' '}
+                                    <p className='text-black inline'>{cartsData?.length}</p>
+                                </li>
+                            </Link>
+                        )}
                     </ul>
                 </div>
             </nav>

@@ -9,13 +9,30 @@ const initialState = {
 export const getAllProducts = createAsyncThunk('product/getAllProducts', async () => {
     try {
         const products = axiosInstance.get('/product');
-        console.log("products ",products);
+        console.log("products from the backend ",products);
         toast.promise(products, {
             loading: 'Hang on! Fetching all products',
             success: "Products fetched successfully",
             error: 'Oh no! Something went wrong, please try again'
         });
         const apiResponse = await products;
+        return apiResponse.data;
+    } catch (error) {
+        console.log(error.message);
+        toast.error('Oh no! Something went wrong, please try again');
+    }
+});
+
+export const getProductDetails = createAsyncThunk('product/getDetails', async (id) => {
+    try {
+        const product = axiosInstance.get(`/product/${id}`);
+        console.log("products from the backend ",product);
+        toast.promise(product, {
+            loading: 'Hang on! Fetching the product',
+            success: "Product load successfully",
+            error: 'Oh no! Something went wrong, please try again'
+        });
+        const apiResponse = await product;
         return apiResponse.data;
     } catch (error) {
         console.log(error.message);
