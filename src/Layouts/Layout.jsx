@@ -9,7 +9,7 @@ function Layout({ children }) {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const { cartsData } = useSelector((state) => state.cart);
-    console.log("cartData1", cartsData);
+    console.log("Cart data from the layout", cartsData);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -43,7 +43,7 @@ function Layout({ children }) {
                 </div>
                 <div>
                     <ul className='flex gap-4'>
-                        <li className='hover:text-[#FF9110]'>
+                        <li className='hover:text-[#FF9110] '>
                             {isLoggedIn ? (
                                 <Link onClick={handelLogout}>Logout</Link>
                             ) : (
@@ -55,7 +55,7 @@ function Layout({ children }) {
                                 <li>
                                     <img src={CartIcon} alt="Cart" className='w-6 h-6 inline' />
                                     {' '}
-                                    <p className='text-black inline'>{cartsData?.length}</p>
+                                    <p className='text-black inline'>{cartsData?.items?.length}</p>
                                 </li>
                             </Link>
                         )}

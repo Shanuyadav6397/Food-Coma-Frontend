@@ -19,10 +19,6 @@ function ProductDetails() {
     }
 
     async function handleCart() {
-        //console.log("Product id", productId);
-        //console.log("Product details", productDetails);
-        //console.log("Cart data", cartData);
-        //console.log("Is in cart", isInCart);
         const response = await dispatch(addProductToCart(productId));
         console.log("Add response", response);
         console.log("Add response", response?.payload?.success);
@@ -32,7 +28,7 @@ function ProductDetails() {
         }
     }
 
-    async function handleRemove(productId) {
+    async function handleRemove() {
         const response = await dispatch(removeProductFromCart(productId));
         console.log("Remove response", response);
         console.log("Remove response", response?.payload?.success);
@@ -164,14 +160,14 @@ function ProductDetails() {
                                 </span>
                                 {isInCart ? (
                                     <button
-                                        className="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600"
+                                        className="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600 hover:cursor-pointer"
                                         onClick={() => handleRemove(productId)}
                                     >
                                         Remove from cart
                                     </button>
                                 ) : (
                                     <button
-                                        className="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600"
+                                        className="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600 hover:cursor-pointer"
                                         onClick={handleCart}
                                     >
                                         Add to Cart

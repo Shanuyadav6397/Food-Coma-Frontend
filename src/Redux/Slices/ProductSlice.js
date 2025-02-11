@@ -47,7 +47,7 @@ const productSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getAllProducts.fulfilled, (state, action) => {
-                console.log("Action payload", action.payload);
+                console.log("Product Action payload", action.payload);
                 state.productsData = action?.payload?.data;
             });
     }

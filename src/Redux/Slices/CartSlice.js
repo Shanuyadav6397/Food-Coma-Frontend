@@ -65,7 +65,7 @@ const cartSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(getCartDetails.fulfilled, (state, action) => {
             console.log("Action payload", action);
-            state.cartsData = action?.payload?.data?.data;
+            state.cartsData = action?.payload?.data;
         });
     }
 });

@@ -7,6 +7,7 @@ import Denied from './Pages/Denied.jsx'
 import AddProduct from './Pages/Admin/AddProduct.jsx'
 import Login from './Pages/Auth/Login.jsx'
 import ProductDetails from './Pages/Products/ProductDetails.jsx'
+import CartDetails from './Pages/Cart/CartDetails.jsx'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="/admin/addproduct" element={<AddProduct />} />
+        <Route path="/cart" element={<CartDetails />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
