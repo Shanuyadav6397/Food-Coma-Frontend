@@ -4,7 +4,7 @@ import CookingImage from "../assets/Images/cooking1.png";
 import orderFood from "../assets/Images/orderFood.png";
 import Pickup from "../assets/Images/pickup.png";
 import Enjoy from "../assets/Images/enjoy.png";
-import PatchCheck from "../Components/Icons/patchCheck.jsx";
+import PatchCheck from "../Components/Icons/PatchCheck.jsx";
 import Layout from "../Layouts/Layout.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
