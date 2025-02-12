@@ -36,7 +36,7 @@ function Login() {
             return;
         }
         const apiResponse = await dispatch(login(loginState));
-        console.log("API Response", apiResponse);
+        //console.log("API Response", apiResponse);
         if (apiResponse.payload?.success) {
             navigate("/");
         }

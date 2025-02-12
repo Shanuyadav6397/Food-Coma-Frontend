@@ -9,7 +9,7 @@ const initialState = {
 export const getAllProducts = createAsyncThunk('product/getAllProducts', async () => {
     try {
         const products = axiosInstance.get('/product');
-        console.log("products from the backend ",products);
+        //console.log("products from the backend ",products);
         toast.promise(products, {
             loading: 'Hang on! Fetching all products',
             success: "Products fetched successfully",
@@ -47,7 +47,7 @@ const productSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getAllProducts.fulfilled, (state, action) => {
-                console.log("Product Action payload", action.payload);
+                //console.log("Product Action payload", action.payload);
                 state.productsData = action?.payload?.data;
             });
     }

@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import axiosInstance from "../../Helpers/axiosInstance.js";
+import { useDispatch } from "react-redux";
+import { logout } from "./AuthSlice.js";
 
 const initialState = {
     cartsData: ''
@@ -44,16 +46,26 @@ export const removeProductFromCart = createAsyncThunk('cart/removeProduct', asyn
 export const getCartDetails = createAsyncThunk('cart/getdetails', async () => {
     try {
         const cartDetails = axiosInstance.get('/cart/fetch');
-        console.log("products from the backend ", cartDetails);
+        //console.log("products from the backend ", cartDetails);
         toast.promise(cartDetails, {
             loading: 'Hang on! Fetching the cart details',
             success: "Cart details fetched successfully",
             error: 'Oh no! Something went wrong cannot fetch cart details'
         });
         const apiResponse = await cartDetails;
+        //console.log("apiResponse", apiResponse);
         return apiResponse.data;
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
+        if (error?.response?.status === 401) {
+            toast.error('Please login to view cart');
+            return {
+                isUnauthorized: true
+            }
+        }
+        // if(error.message === 'Request failed with status code 401') {
+        //     toast.error('Please login to view cart');
+        // }
         toast.error('Oh no! Something went wrong, please try again');
     }
 });
@@ -64,7 +76,7 @@ const cartSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getCartDetails.fulfilled, (state, action) => {
-            console.log("Action payload", action);
+            //console.log("Action payload", action);
             state.cartsData = action?.payload?.data;
         });
     }
