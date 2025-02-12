@@ -8,6 +8,8 @@ import AddProduct from './Pages/Admin/AddProduct.jsx'
 import Login from './Pages/Auth/Login.jsx'
 import ProductDetails from './Pages/Products/ProductDetails.jsx'
 import CartDetails from './Pages/Cart/CartDetails.jsx'
+import Order from './Pages/Order/Order.jsx'
+import OrderSuccess from './Pages/Order/OrderSuccess.jsx'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/signup" element={<Signup />} />
         <Route path="/auth/login" element={<Login />} />
+        <Route path='/order' element={<Order />} />
+        <Route path='/order/success' element={<OrderSuccess />} />
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="/admin/addproduct" element={<AddProduct />} />
         <Route path="/cart" element={<CartDetails />}></Route>
