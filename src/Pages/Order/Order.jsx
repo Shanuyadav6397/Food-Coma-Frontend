@@ -77,7 +77,7 @@ function Order() {
                                 onChange={handleUserInput}
                                 className="p-2 border rounded-md focus:outline-none focus:border-primary-500 bg-white text-gray-700 w-full"
                             >
-                                <option value="OFFLINE">Offline</option>
+                                <option value="COD">COD</option>
                                 <option value="ONLINE">Online</option>
                             </select>
                         </div>
