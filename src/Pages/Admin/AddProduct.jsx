@@ -1,13 +1,16 @@
 import Layout from "../../Layouts/Layout";
-import Food from "../../assets/Images/food.svg";
+import Food from "../../assets/Images/food3.svg";
 
 function AddProduct() {
     return (
         <Layout>
             <section className="py-12">
-                <div className="flex items-center justify-center px-5">
-                    <div className="md:w-2/6">
-                        <img src={Food} />
+                <div className="flex flex-col md:flex-row items-center justify-center px-5">
+                    <div className="md:w-2/6 flex justify-center items-center mx-auto">
+                        <img
+                            className="object-cover object-center rounded-lg shadow-md"
+                            src={Food}
+                        />
                     </div>
                     <div className="max-w-md md:w-4/6 mx-auto mt-8 bg-white p-4">
                         <h2 className="mb-4 text-2xl font-semibold">
