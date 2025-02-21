@@ -11,13 +11,31 @@ const initialState = {
 export const createAccount = createAsyncThunk('auth/createAccount', async (data) => {
     console.log("Incoming data to the thunk", data);
     try {
-        const response = axiosInstance.post('/user/register', data);
+        const response = axiosInstance.post('/user/initiate-register', data);
+        toast.promise(response, {
+            loading: 'Hang on! Sending OTP to your email',
+            success: (resovledPromise) => {
+                return resovledPromise?.data?.message || 'OTP sent successfully';
+            },
+            error: 'Oh no! Could not send OTP, please try again'
+        });
+        const apiResponse = await response;
+        return apiResponse.data;
+    } catch (error) {
+        console.log("Error in sending OTP", error);
+    }
+});
+
+export const otpHandel = createAsyncThunk('auth/otp', async (data) => {
+    console.log("Incoming data to the otp thunk", data);
+    try {
+        const response = axiosInstance.post('/user/verify-otp', data);
         toast.promise(response, {
             loading: 'Hang on! Creating your account',
             success: (resovledPromise) => {
                 return resovledPromise?.data?.message || 'Account created successfully';
             },
-            error: 'Oh no! Something went wrong, please try again'
+            error: 'Oh no! Could not create account, please try again'
         });
         const apiResponse = await response;
         return apiResponse.data;
@@ -36,7 +54,7 @@ export const login = createAsyncThunk('auth/login', async (data) => {
                 //console.log("Resolved Promise", resovledPromise);
                 return resovledPromise?.data?.message || 'Logged in successfully';
             },
-            error: 'Oh no! Something went wrong, please try again'
+            error: 'Oh no! Could not login, please try again'
         });
         const apiResponse = await response;
         return apiResponse.data;
@@ -56,7 +74,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
                 //console.log("Resolved Promise", resovledPromise);
                 return resovledPromise?.data?.message || 'Logged out successfully';
             },
-            error: 'Oh no! Something went wrong, please try again'
+            error: 'Oh no! Could not logout, please try again'
         });
         const apiResponse = await response;
         return apiResponse.data;
@@ -74,7 +92,6 @@ const AuthSlice = createSlice({
         builder
             .addCase(login.fulfilled, (state, action) => {
                 // reducer when the login thunk is fulfilled
-                //console.log("Action", action);
                 state.isLoggedIn = true;
                 state.role = action?.payload?.data?.data?.userRole;
                 state.data = action?.payload?.data?.data?.userData;

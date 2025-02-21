@@ -37,7 +37,7 @@ function Layout({ children }) {
         <div>
             <nav className="flex items-center justify-around h-16 text-[#6B7280] font-mono border-none shadow-md">
                 <div onClick={() => navigate("/")} className="flex items-center justify-center hover:cursor-pointer">
-                    <p>Pizza App</p>
+                    <p className='hover:text-[#FF9110]'>Pizza App</p>
                     <img className='h-15 w-15' src={Pizzalogo} alt="Pizza logo" />
                 </div>
                 <div className='hidden md:block'>
@@ -70,7 +70,7 @@ function Layout({ children }) {
                                 <li>
                                     <img src={CartIcon} alt="Cart" className='w-6 h-6 inline' />
                                     {' '}
-                                    <p className='text-black inline'>{cartsData?.items?.length}</p>
+                                    <p className='text-black inline hover:text-[#FF9110]'>{cartsData?.items?.length}</p>
                                 </li>
                             </Link>
                         )}

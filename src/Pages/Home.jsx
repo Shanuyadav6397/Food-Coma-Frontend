@@ -151,35 +151,6 @@ function Home() {
                         </div>
                     </div>
                 </section>
-                {/* <section className="py-4 mt-6 bg-gradient-to-r from-amber-50 to-orange-300">
-                    <div className="container">
-                        <h2 className="text-3xl font-bold text-center text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
-                            Our Products
-                        </h2>
-                        <div className="grid grid-cols-1 gap-5 mt-5 md:grid-cols-3">
-                            {productsData.map((product) => (
-                                <div
-                                    key={product._id}
-                                    className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md cursor-pointer hover:shadow-lg">
-                                    <img
-                                        src={product?.productImage}
-                                        alt={product.productName}
-                                        className="rounded-lg"
-                                    />
-                                    <h3 className="text-lg font-bold text-center text-transparent bg-gradient-to-r from-orange-500 to-orange-200 bg-clip-text">
-                                        {product?.productName}
-                                    </h3>
-                                    <p className="text-center text-[#6B7280]">
-                                        {product?.description}
-                                    </p>
-                                    <p className="text-center text-[#6B7280]">
-                                        Price: ${product?.price}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section> */}
                 {/* Products Section */}
                 <div className="mx-auto">
                     <div className="flex flex-wrap justify-center">

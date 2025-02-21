@@ -11,5 +11,5 @@ export const store = configureStore({
         cart: CartSliceReducer,
         order: OrderSliceReducer
     },
-    devTools: true
+    devTools: true // Enable Redux DevTools
 });
