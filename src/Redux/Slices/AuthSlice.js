@@ -17,7 +17,9 @@ export const createAccount = createAsyncThunk('auth/createAccount', async (data)
             success: (resovledPromise) => {
                 return resovledPromise?.data?.message || 'OTP sent successfully';
             },
-            error: 'Oh no! Could not send OTP, please try again'
+            error: (rejectedPromise) => {
+                return rejectedPromise?.response?.data?.message || 'Oh no! Could not send OTP, please try again';
+            }
         });
         const apiResponse = await response;
         return apiResponse.data;
@@ -54,7 +56,10 @@ export const login = createAsyncThunk('auth/login', async (data) => {
                 //console.log("Resolved Promise", resovledPromise);
                 return resovledPromise?.data?.message || 'Logged in successfully';
             },
-            error: 'Oh no! Could not login, please try again'
+            error: (rejectedPromise) => {
+                //console.log("Rejected Promise", rejectedPromise);
+                return rejectedPromise?.response?.data?.message || 'Oh no! Could not login, please try again';
+            }
         });
         const apiResponse = await response;
         return apiResponse.data;
